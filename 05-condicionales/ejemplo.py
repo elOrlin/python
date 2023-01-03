@@ -20,3 +20,14 @@ else:
         print(f"{pais} Es un pais de habla hispana")
     else:
         print(f"{pais} no es un pais de habla hispana")
+        
+        
+     #ejemplo 7
+    print("\n#################### EJEMPLO 7 #######################")
+
+    pais = "Alemania"
+
+    if not (pais == 'Mexico' or pais == 'Espana' or pais == 'Colombia'):
+        print(f"{pais} No Es un pais de habla hispana")
+    else:
+        print(f"{pais} Si es un pais de habla hispana")
