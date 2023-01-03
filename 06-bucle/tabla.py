@@ -1,16 +1,22 @@
-nombre_usuario = 0
-numero_tabla = 0
+numero_usuario = 0
+ 
+print("##################EJEMPLO DE TABLA##########################")
 
-print("\n############# EJEMPLO Tabla De Multiplicar #############")
+numero_usuario = 0
+numero_usuario = int(input("de que numero quieres la tabla?:"))
+
+if numero_usuario < 1:
+    numero_usuario = 1
     
-nombre_usuario = int(input("de que numero quieres la tabla?: "))
+    print(f"Tabla de multiplicar {numero_usuario}")
     
-if nombre_usuario > 1:
-    nombre_usuario = 1
+for numero_tabla in range(1, 13):
+    
+    if numero_usuario == 45:
+        print("no se puede mostrar numeros prohibidos")
         
-print(f"tabla de multiplicar {nombre_usuario}")
-    
-for numero_tabla in range(0, 10):
-    print(f"{nombre_usuario} x {numero_tabla} = {nombre_usuario*numero_tabla}")
+        break
+        
+    print(f"{numero_usuario} X {numero_tabla} = {numero_usuario*numero_tabla}")
 else:
-     print('Tabla finalizada.')
+    print("Tabla finalizada.")
