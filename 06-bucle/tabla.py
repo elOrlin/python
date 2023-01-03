@@ -1,3 +1,6 @@
+nombre_usuario = 0
+numero_tabla = 0
+
 print("\n############# EJEMPLO Tabla De Multiplicar #############")
     
 nombre_usuario = int(input("de que numero quieres la tabla?: "))
