@@ -12,3 +12,7 @@ def devuelveTodo(nombre, apellidos):
 
 print(devuelveTodo('Orlin', 'Diaz'))
 
+#funciones lambdas
+dime_el_year = lambda year: f"El year es {year}"
+
+print(dime_el_year(2034))
