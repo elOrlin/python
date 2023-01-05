@@ -54,6 +54,6 @@ for contacto in contactos:
     for elemento in contacto:
         if contacto.index(elemento) == 0:
             print(f"Nombre: {elemento}")
-            
         else:
             print(f"Apellidos: {elemento}")
+    print("\n")
