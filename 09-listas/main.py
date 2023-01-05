@@ -49,7 +49,6 @@ contactos = [
     ]
 ]
     
-    
 for contacto in contactos:
     for elemento in contacto:
         if contacto.index(elemento) == 0:
