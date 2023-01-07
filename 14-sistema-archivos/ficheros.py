@@ -32,3 +32,10 @@ for frase in lista:
     ruta_original = str(pathlib.Path().absolute()) + "/14-sistema-archivos/ficheros_texto.txt"
     ruta_nueva = str(pathlib.Path().absolute()) + "/14-sistema-archivos/ficheros_copiado.txt"
     shutil.copyfile(ruta_original, ruta_nueva)
+    
+    #mover archivos
+    
+    ruta_copiado = str(pathlib.Path().absolute()) + "/14-sistema-archivos/ficheros_copiado.txt"
+    ruta_copiado_nueva = str(pathlib.Path().absolute()) + "/14-sistema-archivos/ficheros_copiado_NUEVA.txt"
+    
+    shutil.move(ruta_copiado, ruta_copiado_nueva)
