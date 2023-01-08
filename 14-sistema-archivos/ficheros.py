@@ -28,14 +28,33 @@ for frase in lista:
     frase_lista = frase.split()
     print(frase.center(100))
     
-    #copiar archivo
-    ruta_original = str(pathlib.Path().absolute()) + "/14-sistema-archivos/ficheros_texto.txt"
-    ruta_nueva = str(pathlib.Path().absolute()) + "/14-sistema-archivos/ficheros_copiado.txt"
-    shutil.copyfile(ruta_original, ruta_nueva)
+#copiar archivo
+ruta_original = str(pathlib.Path().absolute()) + "/14-sistema-archivos/ficheros_texto.txt"
+ruta_nueva = str(pathlib.Path().absolute()) + "/14-sistema-archivos/ficheros_copiado.txt"
+shutil.copyfile(ruta_original, ruta_nueva)
     
-    #mover archivos
+#mover archivos
+ruta_copiado = str(pathlib.Path().absolute()) + "/14-sistema-archivos/ficheros_copiado.txt"
+ruta_copiado_nueva = str(pathlib.Path().absolute()) + "/14-sistema-archivos/ficheros_copiado_NUEVA.txt"
+
+shutil.move(ruta_copiado, ruta_copiado_nueva)
     
-    ruta_copiado = str(pathlib.Path().absolute()) + "/14-sistema-archivos/ficheros_copiado.txt"
-    ruta_copiado_nueva = str(pathlib.Path().absolute()) + "/14-sistema-archivos/ficheros_copiado_NUEVA.txt"
+#eliminar archivos
+#para eliminar archivos necesitamos importar otro metodo llamado (OS)
+import os
+
+os.remove(ruta_copiado_nueva)
+
+#comprobar si un archivo existe
+import os.path
+
+print(os.path.abspath("../"))
+ruta_comprobar = os.path.abspath('./') + "/ficheros_texto.txt"
+
+print(ruta_comprobar)
+
+if os.path.isfile(ruta_comprobar):
+    print("el archivo existe")
+else:
+    print('el archivo no existe')
     
-    shutil.move(ruta_copiado, ruta_copiado_nueva)
