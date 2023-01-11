@@ -11,7 +11,7 @@ cursor = conexion.cursor()
 cursor.execute("CREATE TABLE IF NOT EXISTS productos("+
     "id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,"+
    "titulo VARCHAR(255),"+
-   "descripcion TEXT,"+
+    "descripcion TEXT,"+
    "precio int(255)"+
 ")")
 
