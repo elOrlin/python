@@ -44,3 +44,15 @@ for coche in result:
     coche = cursor.fetchone()
     print(coche)
     
+    #borrar 
+    cursor.execute("DELETE FROM vehiculos WHERE marca = 'Mercedes'")
+    database.commit()
+    
+    #mostrar los elementos borrados 
+    print(cursor.rowcount, 'borrados!!')
+    
+    #actualizar
+    cursor.execute("UPDATE vehiculos SET marca='Renault' WHERE modelo='Clio'")
+    database.commit()
+    
+    print(cursor.rowcount, 'actualizados!!')
