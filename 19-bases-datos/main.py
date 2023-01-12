@@ -27,3 +27,20 @@ CREATE TABLE IF NOT vehiculos(
     CONSTRAINT pk_vehiculo PRIMARY KEY(id)
 )           
 """)
+
+#cursor.executemany("INSERT INTO vehiculos VALUES (null, %s, %s, %s)", coches)
+database.commit()
+     
+#si quiero sacar toda la informacion de mi base datos usar (SELECT)
+cursor.execute("SELECT * FROM vehiculos WHERE precio >= 5000 AND marca = 'Renault' ")
+#sacar todos los datos que tengo
+result = cursor.fetchall()
+
+for coche in result:
+    print(coche[1], coche[2], coche[3])
+        
+    
+    cursor.execute("SELECT * FROM vehiculos")
+    coche = cursor.fetchone()
+    print(coche)
+    
