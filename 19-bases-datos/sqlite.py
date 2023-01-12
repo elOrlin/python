@@ -1,6 +1,5 @@
 #importar el modulo
 import sqlite3
-
 #conexion
 conexion = sqlite3.connect('./19-bases-datos/pruebas.db')
 
