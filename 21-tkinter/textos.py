@@ -5,6 +5,12 @@ ventana = Tk()
 ventana.geometry("500x500")
 
 texto = Label(ventana, text="Bienvenido a mi clase")
-texto.pack()
+texto.config(
+    height=3,
+    bg="orange",
+    font=("Arial", 18)
+)
+
+texto.pack(anchor=CENTER)
 
 ventana.mainloop()
