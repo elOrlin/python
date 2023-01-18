@@ -22,7 +22,7 @@ class Usuario:
         
     def registrar(self):
         fecha = '12/1/2023'
-        sql = "INSERT INTO usuarios VALUES (null, %s, %s, %s, %s)"
+        sql = "INSERT INTO usuarios VALUES(null, %s, %s, %s, %s, %s)"
         usuario = (self.nombre, self.apellidos, self.email, self.password, fecha)
         
         cursor.execute(sql, usuario)
