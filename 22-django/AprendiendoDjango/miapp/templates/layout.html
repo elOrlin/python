@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}  {% endblock %}| Orlin Diaz</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+    <header>
+        <div id="logotipo">
+            <img src="{% static "imagenes/logo.png"%}"/>
+            <h1>Sitio Web con Django | Orlin Diaz Diaz</h1>
+        </div>
+    </header>
+
+    <div class="navegacion">
+        <nav>
+            <ul>
+                <li><a href="/hola-mundo">Orlin Diaz Diaz</a></li>
+                <li><a href="/inicio">Otniel Diaz Diaz</a></li>
+                <li><a href="/nombreApellido">Olvin Diaz Diaz</a></li>
+                <li><a href="/hola-mundo">Telefono</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="barra">
+        <span class="esquina-izquierda"> </span>
+        <span class="relleno-barra"> </span>
+        <span class="esquina-derecha"> </span>
+    </div>
+
+    <div class="contenido">
+        <h2 class="title"> Titulo de Prueba
+        {% block content %}
+            <strong>contenido desde layout</strong>
+        {% endblock %}
+        </h2>
+    </div>
+
+    <footer>
+        Master en Python &copy; Orlin Diaz
+    </footer>
+</body>
+</html>
