@@ -48,5 +48,5 @@ class Programa:
 #instanciar mi programa
 programa = Programa()
 programa.cargar()
-programa.addTexto("Hola desde un metodo")
+programa.addTexto("agregando un metodo")
 programa.mostrar()
