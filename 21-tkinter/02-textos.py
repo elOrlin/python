@@ -4,7 +4,7 @@ ventana = Tk()
 
 ventana.geometry("500x500")
 
-texto = Label(ventana, text="Bienvenido a mi clase de textos")
+texto = Label(ventana, text="Bienvenido a mi clase de texto")
 texto.config(
     height=3,
     bg="orange",
