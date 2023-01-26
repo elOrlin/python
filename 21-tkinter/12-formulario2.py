@@ -45,4 +45,22 @@ marcado.grid(row=7)
 Label(ventana, text="Cual es tu genero? ").grid(row=4)
 Radiobutton(ventana, text="Masculino", value="Masculino", variable=opcion, command=marcar).grid(row=5)
 Radiobutton(ventana, text="Femenino", value="Femenino", variable=opcion, command=marcar).grid(row=6)
+
+def selecionar():
+    selecionado.config(text=select.get())
+
+select = StringVar()
+select.set("Opcion 1")
+
+Label(ventana, text="Selecciona una opcion? ").grid(row=4, column=1)
+
+selecto = OptionMenu(ventana, select, "Opcion 1", "Opcion 2", "Opcion 3" )
+selecto.grid(row=5, column=1)
+
+boton = Button(ventana, text="Ver", command=selecionar)
+boton.grid(row=6, column=1)
+
+selecionado = Label(ventana)
+selecionado.grid(row=7, column=1)
+
 ventana.mainloop()
