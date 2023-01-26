@@ -32,3 +32,17 @@ Checkbutton(ventana, text="Desarrollo Movil", variable=movil, onvalue=1, offvalu
 
 mostrar = Label(ventana)
 mostrar.grid(row=3, column=0)
+
+def marcar():
+    marcado.config(text=opcion.get())
+
+opcion = StringVar()
+opcion.set(None)
+
+marcado = Label(ventana)
+marcado.grid(row=7)
+
+Label(ventana, text="Cual es tu genero? ").grid(row=4)
+Radiobutton(ventana, text="Masculino", value="Masculino", variable=opcion, command=marcar).grid(row=5)
+Radiobutton(ventana, text="Femenino", value="Femenino", variable=opcion, command=marcar).grid(row=6)
+ventana.mainloop()
