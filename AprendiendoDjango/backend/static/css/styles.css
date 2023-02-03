@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif, Arial, Helvetica;
+    text-decoration: none;
+    box-sizing: inherit;
+}
+
+body{
+    padding: 2rem;
+    background-color: #f2f2f2;
+    box-sizing: border-box;
+}
+
+header {
+    width: 75%;
+    height: 14rem;
+    background: #23282b;
+    margin: 0 auto;
+}
+
+#logotipo {
+    width: 60%;
+    height: 14rem;
+    margin: 0 auto;
+    padding-top: 2rem;
+}
+
+#logotipo img {
+    display: block;
+    float: left;
+    width: 5rem;
+    margin-top: 2rem;
+}
+
+#logotipo h1{
+    display: block;
+    letter-spacing: 2px;
+    font-weight: 100;
+    float: left;
+    color: #42a096;
+    margin-top: 3rem;
+    margin-left: 2rem;
+    padding-top: 1rem;
+    font-size: 2rem;
+}
+
+nav {
+    width: 78.12%;
+    height: 4rem;
+    background-color: #1B1E1F;
+    border: 1px solid #333333;
+    margin: 0 auto;
+    box-shadow: 0 2rem 4rem rgba(0,0,0, .15);
+    font-size: 1.5rem;
+}
+
+nav ul {
+    list-style: none;
+    text-decoration: none;
+}
+
+nav ul li {
+    line-height: 4rem;
+    float: left;
+}
+
+nav ul li a {
+    display: block;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    color: #d1d4d6;
+    font-size: 1.3rem;
+    transition: all .4s;
+}
+
+nav ul li a:hover {
+    background-color: #2ba977;
+    box-shadow: 0rem .5rem 2rem #444 inset;
+    color: white;
+}
+
+.barra {
+    display: block;
+    width: 78.12%;
+    margin: 0 auto;
+    margin-bottom: 14rem;
+    position: relative;
+}
+
+.esquina-izquierda {
+    display: block;
+    border-left: 30px solid transparent;
+    border-top: 10px solid #2B2F30;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.relleno-barra {
+    display: block;
+    height: auto;
+    background-color: #2B2F30;
+    width: 100%;
+    box-shadow: 2rem 3rem 4rem #444;
+}
+
+
+.esquina-derecha {
+    display: block;
+    border-right: 30px solid transparent;
+    border-top: 10px solid #2B2F30;
+    position: absolute;
+    float: right;
+    top: 0;
+    right: 0;
+}
+
+.contenido {
+    display: block;
+}
+
+footer {
+    background-color: #23282b;
+    padding: 45px;
+    color: white;
+    margin-top: 180px;
+    width: 100%;
+    position: relative;
+}
+
+.listado {
+    text-align: center;
+}
+
+.pie {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

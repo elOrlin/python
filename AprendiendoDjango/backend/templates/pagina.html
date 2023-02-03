@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block title %} Pagina de pruebas {% endblock %}
+
+{% block content %}
+<div>
+    <h1>Desarrollo web con Django</h1>
+    <p>Django es un framework de python dedicado al backend con rutas, vistas y modelos</p>
+    {{texto|default:"no hay nada"}}
+
+    <ul>
+        <li>{{lista|first}}</li>
+        <li>{{lista|last}}</li>
+        <li>{{lista|join:', '}}</li>
+        <li>{{lista|length}}</li>
+        <li>{{lista|upper}}</li>
+        <li>{{lista|lower}}</li>
+        <li>{{lista|random}}</li>
+    </ul>
+</div
+
+{% endblock %}
