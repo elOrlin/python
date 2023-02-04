@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponse, redirect
 from backend.models import Article
+from django.db.models import Q
 
 # Create your views here.
 layout = """ 
@@ -120,7 +121,28 @@ def editar_articulo(request, id):
 def articulos(request):
     articulos = Article.objects.all()
     
-    articulos = Article.objects.filter(title="Batman")
+    articulos = Article.objects.filter(title__contains="Javascritpt and Python")
+    articulos = Article.objects.filter(title__exact="Javascritpt and Python")
+    
+    #mayor a la cantidad 
+    articulos = Article.objects.filter(id__gt=17)
+    
+    ##mayor o igual
+    articulos = Article.objects.filter(id__gte=13)
+    
+    #menores a la cantidad
+    articulos = Article.objects.filter(id__lt=13)
+    
+    #menor o igual
+    articulos = Article.objects.filter(id__lte=13, title__contains="Progrmacion con python")
+    
+    articulos = Article.objects.filter(
+        Q(title__contains="11") | Q(public=False)
+    )
+    
+    articulos = Article.objects.filter(id__gte=10).exclude(public=True)
+   
+    articulos = Article.objects.raw("SELECT * FROM backend_article WHERE title='Articulo 2' AND public=0")
     
     return render(request, 'articulos.html', {
         'articulos': articulos
