@@ -95,6 +95,33 @@ def crear_articulo(request, title, content, public):
     
     return HttpResponse(f'Articulo Creado: {articulo.title} {articulo.content} {articulo.public}')
 
+def save_articulo(request):
+    if request.method == "POST":
+        
+        title = request.POST['title']
+        
+        if len(title) <= 5:
+             return HttpResponse(f'El titulo es muy pequeno')
+        
+        content = request.POST['content']
+        public = request.POST['public']
+        
+        articulo = Article(
+            title = title,
+            content = content,
+            public = public
+        )
+    
+        articulo.save()
+        return HttpResponse(f'Articulo guardado: {articulo.title} {articulo.content} {articulo.public}')
+    
+    else:
+        return HttpResponse(f'<h2>No se ha podido crear el articulo...</h2>')
+    
+def create_article(request):
+    
+    return render(request, 'create-article.html')
+
 #(mostrar/obtener) los articulos
 def articulo(request):
     
@@ -119,31 +146,31 @@ def editar_articulo(request, id):
     return HttpResponse(f'Articulo Editado: {articulo.title} {articulo.content} {articulo.public}')
 
 def articulos(request):
-    articulos = Article.objects.all()
+    articulos = Article.objects.all().order_by("-id")
     
-    articulos = Article.objects.filter(title__contains="Javascritpt and Python")
-    articulos = Article.objects.filter(title__exact="Javascritpt and Python")
+    #articulos = Article.objects.filter(title__contains="Javascritpt and Python")
+    #articulos = Article.objects.filter(title__exact="Javascritpt and Python")
     
     #mayor a la cantidad 
-    articulos = Article.objects.filter(id__gt=17)
+    #articulos = Article.objects.filter(id__gt=17)
     
     ##mayor o igual
-    articulos = Article.objects.filter(id__gte=13)
+    #articulos = Article.objects.filter(id__gte=13)
     
     #menores a la cantidad
-    articulos = Article.objects.filter(id__lt=13)
+   # articulos = Article.objects.filter(id__lt=13)
     
     #menor o igual
-    articulos = Article.objects.filter(id__lte=13, title__contains="Progrmacion con python")
-    
+    #articulos = Article.objects.filter(id__lte=13, title__contains="Progrmacion con python")
+    '''
     articulos = Article.objects.filter(
         Q(title__contains="11") | Q(public=False)
     )
     
-    articulos = Article.objects.filter(id__gte=10).exclude(public=True)
+   articulos = Article.objects.filter(id__gte=10).exclude(public=True)
    
-    articulos = Article.objects.raw("SELECT * FROM backend_article WHERE title='Articulo 2' AND public=0")
-    
+   articulos = Article.objects.raw("SELECT * FROM backend_article WHERE title='Articulo 2' AND public=0")
+    '''
     return render(request, 'articulos.html', {
         'articulos': articulos
     })
