@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from backend import views
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -37,3 +38,8 @@ urlpatterns = [
     path("articulos/", views.articulos, name='articulos'),
     path("borrar-articulo/<int:id>/", views.borrar_articulo, name='borrar'),
 ]
+
+#configuracion para mostrar imagenes
+if settings.DEBUG:
+    from django.conf.urls.static import static
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
