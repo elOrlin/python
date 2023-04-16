@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block title %} Inicio {% endblock %}
+
+{% comment "Esto es un comentario" %}
+
+{% endcomment %}
+
+{% block content %}
+{{mi_variable}}
+
+<h1>year until the 2050:</h1>
+
+<ul>
+    {% for year in years %}
+        <li>{{ year }}</li>
+    {% endfor %}
+</ul>
+
+{% if nombre and nombre == "Orlin de los santos Diaz Diaz"%}
+    <p>{{nombre}}</p>
+{% else %}
+    <p>No existe ese nombre no coincide</p>
+{% endif %}
+
+<ul>
+    {% for lenguaje in lenguajes %}
+        <li>{{forloop.revcounter}}. {{lenguaje}}</li>
+    {% empty %}
+        <p>No hay lenguajes para mostrar</p>
+    {% endfor %}
+</ul>
+
+{% include 'fecha-actual.html' with saludo="hola mundo desde plantilla"%}
+
+{% endblock %}

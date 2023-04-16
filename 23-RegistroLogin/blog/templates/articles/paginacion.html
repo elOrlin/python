@@ -1,0 +1,10 @@
+<div class="paginacion">
+    {% if articles.has_previous %}
+        <a href="?page=1">&laquo; Primero</a>
+        <a href="?page={{article.previous_page_number}}">&laquo; Anterior</a>
+    {% endif %}
+
+    <span class="actual"> 
+        Pagina {{articles.number}} de {{articles.paginator.num_pages}}
+    </span>
+</div>

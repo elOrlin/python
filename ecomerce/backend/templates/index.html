@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>title</title>
+  </head>
+  <body>
+    {% block content %}
+        <img src="{% static 'img/user.png'%}">
+        <ul>
+            {% if categories %}
+            <p>Hay datos</p>
+                {% for category in categories %}
+                    <li>{{category.id}} {{category.name}}</li>
+                {% endfor %}
+            {% else %}
+            <p>No hay datos</p>
+            {% endif %}
+        </ul>
+    {% endblock %}
+    <p>{{name}}</p>
+  </body>
+</html>

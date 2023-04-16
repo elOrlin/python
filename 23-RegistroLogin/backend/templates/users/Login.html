@@ -1,0 +1,21 @@
+{% extends 'layouts/layout.html' %}
+
+{% block title %} {{title}} {% endblock %}
+
+{% block content %}
+    <h1>{{title}}</h1>
+
+    {{register_form.errors}}
+
+    <form method="post" action="" class="registro">
+    {% csrf_token %}
+
+        <label for="username"> Nombre del usuario:</label>
+        <input type="text" name="username" />
+
+        <label for="password"> Password:</label>
+        <input type='password' name="password" />
+
+        <input type="submit" value="Registrarse" />
+    </form>
+{% endblock content %}
