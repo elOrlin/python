@@ -7,6 +7,7 @@ from psycopg2 import OperationalError as Psycopg2OpError
 
 from django.db.utils import OperationalError
 from django.core.management.base import BaseCommand
+from django.core.management.commands.test import Command as BaseCommand
 
 
 class Command(BaseCommand):

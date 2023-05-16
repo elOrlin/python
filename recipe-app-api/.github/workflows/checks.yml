@@ -10,8 +10,8 @@ jobs:
       - name: Login to Docker Hub
         uses: docker/login-action@v1
         with:
-          username: ${{ secrets.ELORLIN }}
-          password: ${{ secrets.ELORLIN_TOKEN }}
+          username: ${{ secrets.ORLIN }}
+          password: ${{ secrets.ORLIN_TOKEN }}
       - name: Checkout
         uses: actions/checkout@v2
       - name: Test

@@ -1,0 +1,40 @@
+"""Test fro the django admin modifications"""
+from django.test import TestCase, Client
+from django.contrib.auth import get_user_model
+from django.urls import reverse
+
+class AdminSiteTests(TestCase):
+    def setUp(self):
+        self.client = Client()
+        self.admin_user = get_user_model().objetcs.create_superuser(
+            'olvindiaz@outlook.com',
+            'girls754'
+        )
+
+        self.client.force_login(self.admin_user)
+
+        self.user = get_user_model().objects.create_user(
+            email = 'otnieldiaz@outlook.com',
+            password = 'girls754',
+            name = 'Otniel'
+        )
+
+    def test_users_list(self):
+        "Test tha users are listed on page"
+        url = reverse('admin:core_usuario_changelist')
+        res = self.client.get(url)
+
+        self.assertContains(res, self.user.name)
+        self.assertContains(res, self.user.email)
+
+    def test_edit_user_page(self):
+        """Test the edit user page works"""
+        url = reverse('admin:core_usuario_change', args=[self.user.id])
+        self.client.get(url)
+
+    def test_create_user_page(self):
+        """Test the create user page works."""
+        url = reverse('admin:core_usuario_add')
+        res = self.client.get(url)
+
+        self.assertEqual(res.status_code, 200)
